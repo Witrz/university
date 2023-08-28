@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(../images/bg1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+section {
+    background-color: #100c3c70;
+    border: 1px solid white;
+    box-shadow: 7px 7px #94b44f;
+    height: 250px;
+    color: white;
+    text-align: center;
+}
+
+
+h1 {
+    font-size: 2em;
+}
+
+.niconne {
+    font-family: 'Niconne', cursive;
+    font-size: xx-large;
+    color: navy;
+}
+
+.oxygen {
+    font-family: "Oxygen", sans-serif;
+    letter-spacing: 7px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+
+/* Media queries */
+/* Very large laptop and desktop screens*/
+@media (min-width: 1200px) {
+
+}
+/*Large laptop/desktop screens*/
+@media (min-width: 992px) and (max-width: 1200px) {
+
+}
+/*Standard laptop/desktop screens*/
+@media (min-width: 768px) and (max-width: 992px) {
+
+}
+/*Tablet screens*/
+@media (min-width: 576px) and (max-width: 768px) {
+    section{
+        box-shadow: none;
+    }
+}
+/*Mobile phone screens*/
+@media (max-width: 576px) {
+    section {
+        box-shadow: none;
+        border: none;
+        height: 100px;
+    }

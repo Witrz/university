@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BBBA980B-E7BF-4920-A497-2B470169823C}"
+	ProjectSection(SolutionItems) = preProject
+		HTML5Tutorial.html = HTML5Tutorial.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "css", "css", "{488179AC-0F0E-4B31-A6D6-0E977A82FB0E}"
+	ProjectSection(SolutionItems) = preProject
+		mystyle.css = mystyle.css
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F35A2E11-4738-49EF-A4E5-DC107DA6D784}
+	EndGlobalSection
+EndGlobal
