@@ -31,7 +31,7 @@ pred=mlp.predict(X)
 score=mlp.score(X,Y)
 
 
-#Confusion matrix representing the difference between the true output and predicated output
+#Confusion matrix representing the difference between the true output and predicted output
 cm=confusion_matrix(Y,pred, labels=["Iris-setosa",
                                     "Iris-versicolor",
                                     "Iris-virginica"])
@@ -53,7 +53,7 @@ mlp=MLPClassifier(hidden_layer_sizes=(100,),
                   activation='relu',
                   solver='adam', 
                   alpha=0.0001, 
-                  ax_iter=800)
+                  max_iter=800)
 mlp.fit(x_train,y_train) #returns a trained mlp model in form of object named 'mlp'
 predictions_train=mlp.predict(x_train)
 accuracy_train=mlp.score(x_train, y_train)
