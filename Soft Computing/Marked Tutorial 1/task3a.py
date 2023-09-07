@@ -9,14 +9,14 @@ from sklearn.metrics import confusion_matrix, classification_report
 from seaborn import set, heatmap
 
 # Loading the data
-dataset_init = rc(r'./data/cancer.csv')
+dataset_init = rc(r'./data/abalone.csv')
 dataset = dataset_init.values
-X = dataset[:, 0:5]  # Attributes
-Y = dataset[:, 5]  # True outputs
+X = dataset[:, 0:8]  # Attributes
+Y = dataset[:, 8]  # True outputs
 
 hidden_layers = 5
-learning_rate = 0.1
-epoch = 9
+learning_rate = 0.01
+epoch = 250
 random_state = 42
 
 
@@ -25,8 +25,8 @@ scaler = StandardScaler()
 X = scaler.fit_transform(X)
 
 # Splitting data into train, validation, and test sets (33-33-33)
-X_temp, X_test, Y_temp, Y_test = train_test_split(X, Y, test_size=0.33, random_state=42)
-X_train, X_val, Y_train, Y_val = train_test_split(X_temp, Y_temp, test_size=0.5, random_state=42)
+X_temp, X_test, Y_temp, Y_test = train_test_split(X, Y, test_size=0.33, random_state=random_state)
+X_train, X_val, Y_train, Y_val = train_test_split(X_temp, Y_temp, test_size=0.5, random_state=random_state)
 
 # Training set
 mlp = MLPClassifier(hidden_layer_sizes=(hidden_layers,), activation='relu', solver='adam', learning_rate_init=learning_rate, alpha=0.0001, max_iter=epoch, random_state=random_state)
