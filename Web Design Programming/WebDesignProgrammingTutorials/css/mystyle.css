@@ -206,8 +206,29 @@ figcaption {
     figcaption {
         font-size: 2em;
     }
+}
 
+/* Support for PyScript Tables */
 
-
-
-
+table, td, th {
+    border: 1px solid black;
+    }
+table {
+border-collapse: collapse;
+width: 100%;
+}
+th, td {
+padding: 5px;
+}
+th {
+background-color: navy;
+color: yellow;
+text-align: center;
+}
+tr {
+background-color: white;
+color: navy;
+}
+tr:hover {
+background-color: #f5f5f5;
+}
