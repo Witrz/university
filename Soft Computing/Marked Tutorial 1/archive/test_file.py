@@ -12,20 +12,20 @@ import numpy as np
 ## this file prints the accuracy vs epoch graph. Will need to be improved to allow for testing of multiple variables.
 
 # Loading the data
-dataset_init = rc(r'./data/abalonebaby.csv')
+dataset_init = rc(r'./data/Vote.csv')
 dataset = dataset_init.values
-X = dataset[:, 0:8]  # Attributes
-Y = dataset[:, 8]  # True outputs
+X = dataset[:, 0:16]  # Attributes
+Y = dataset[:, 16]  # True outputs
 
 # Standardizing the data
-scaler = StandardScaler()
-X = scaler.fit_transform(X)
+# scaler = StandardScaler()
+# X = scaler.fit_transform(X)
 
 # Splitting data into train, validation, and test sets (33-33-33)
 
 
-hidden_layer_size = 50
-learning_rate = 0.001
+hidden_layer_size = 20
+learning_rate = 0.1
 random_state = 42
 
 X_temp, X_test, Y_temp, Y_test = train_test_split(X, Y, test_size=0.33, random_state=random_state)
@@ -45,7 +45,7 @@ num_epochs = 1000  # You can adjust this number as needed
 
 for epoch in range(num_epochs):
     # Train the model for one epoch
-    mlp.partial_fit(X_train, Y_train, classes=[1, 2, 3])
+    mlp.partial_fit(X_train, Y_train, classes=[1, 0])
 
     # Calculate and store training accuracy
     train_accuracy = mlp.score(X_train, Y_train)
