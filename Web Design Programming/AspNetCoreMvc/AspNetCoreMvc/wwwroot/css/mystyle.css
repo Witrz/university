@@ -1,0 +1,234 @@
+﻿body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(../images/canberra.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+section {
+    background-color: rgba(255,244,233,0.5);
+    /*margin: 20px;*/
+    padding: 20px;
+    border-style: outset;
+    border-width: 7px;
+}
+
+header {
+    font-size: 20px;
+    font-weight: bold;
+    color: brown;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin-left: 20px;
+}
+
+ul > li {
+    font-weight: bold;
+}
+
+#heading {
+    background: linear-gradient(to right, lightgray, lightblue);
+    box-shadow: 10px 10px navy;
+    border-radius: 25px 25px 25px 25px;
+    border-style: none;
+}
+
+#input > p, #tables > p {
+    margin: 10px 0px 0px 0px;
+    font-weight: bold;
+    font-size: 18px;
+    color: navy;
+}
+
+.niconne {
+    font-family: 'Niconne', cursive;
+    font-size: xx-large;
+    color: navy;
+}
+
+.oxygen {
+    font-family: "Oxygen", sans-serif;
+    letter-spacing: 7px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+figure {
+    height: auto;
+    width: 300px;
+    position: relative;
+}
+
+#vidfig {
+    width: 100%;
+    height: auto;
+}
+
+figure:hover > figcaption {
+    visibility: visible;
+}
+
+#vidfig:hover > figcaption {
+    visibility: hidden;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+figcaption {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    position: absolute;
+    background-image: linear-gradient(to right, red, green, blue);
+    box-shadow: 10px 10px navy;
+    font-family: Arial, sans-serif;
+    font-size: 3em;
+    text-align: center;
+    text-shadow: 4px 3px white;
+    padding-top: 20%;
+    visibility: hidden;
+    opacity: 0.8;
+}
+
+#vidfig > figcaption {
+    background-image: none;
+    background: #2545c269;
+    font: bold 3vw 'Niconne';
+    text-shadow: none;
+    color: navy;
+    box-shadow: none;
+    padding-left: 7vw;
+    padding-top: 10vw;
+    visibility: visible;
+    opacity: 0.8;
+}
+
+#vidfig > video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#canberra {
+    font-size: 70px;
+    text-shadow: none;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.fa {
+    width: 30px;
+    height: 30px;
+    padding: 7.5px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+/* Media queries */
+/* Very large laptop and desktop screens*/
+@media (min-width: 1200px) {
+    figure {
+        width: 300px;
+    }
+
+    figcaption {
+        font-size: 3em;
+    }
+
+    #canberra {
+        font-size: 60px;
+    }
+}
+/*Large laptop/desktop screens*/
+@media (min-width: 992px) and (max-width: 1200px) {
+    figure {
+        width: 250px;
+    }
+
+    figcaption {
+        font-size: 2.5em;
+    }
+
+    #canberra {
+        font-size: 40px;
+    }
+}
+/*Standard laptop/desktop screens*/
+@media (min-width: 768px) and (max-width: 992px) {
+    figure {
+        width: 200px;
+    }
+
+    figcaption {
+        font-size: 2em;
+    }
+
+    #canberra {
+        font-size: 30px;
+    }
+}
+/*Tablet screens*/
+@media (min-width: 576px) and (max-width: 768px) {
+    figure {
+        width: 200px;
+    }
+
+    figcaption {
+        font-size: 1.5em;
+    }
+
+    #canberra {
+        font-size: 30px;
+    }
+}
+/*Mobile phone screens*/
+@media (max-width: 576px) {
+    figure {
+        width: 250px;
+    }
+
+    figcaption {
+        font-size: 2em;
+    }
+}
+
+/* Support for PyScript Tables */
+
+table, td, th {
+    border: 1px solid black;
+    }
+table {
+border-collapse: collapse;
+width: 100%;
+}
+th, td {
+padding: 5px;
+}
+th {
+background-color: navy;
+color: yellow;
+text-align: center;
+}
+tr {
+background-color: white;
+color: navy;
+}
+tr:hover {
+background-color: #f5f5f5;
+}
