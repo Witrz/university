@@ -16,7 +16,7 @@ if (sections.length > 0) {
     // Add Canberra image to this last section
     lastSection.innerHTML +=
         "<figure>" +
-        " <img src='images/canberra.jpg' />" +
+        " <img src='../images/canberra.jpg' />" +
         " <figcaption>Canberra</figcaption>" +
         "</figure>";
 }
@@ -25,7 +25,7 @@ if (sections.length > 0) {
 function addImage(container, imageFilename, imageCaption) {
     container.innerHTML +=
         "<figure class='col-md-4 col-sm-6 col-12' >" +
-        " <img src='images/" + imageFilename + "' />" +
+        " <img src='../images/" + imageFilename + "' />" +
         " <figcaption>" + imageCaption + "</figcaption>" +
         "</figure>";
 }
@@ -54,7 +54,7 @@ function mouseDown(obj) {
     }
 }
 
-var body = document.querySelector('body');
+var body = document.getElementById('html5page');
 body.appendChild(newSection);
 
 
@@ -117,3 +117,13 @@ function onScroll() {
 // Add the onScroll function as event handler for
 // the scroll event on the viewport
 window.addEventListener("scroll", onScroll);
+
+var divs = document.querySelectorAll("div");
+if (divs != null) {
+    for (var i = 0; i < divs.length; i++) {
+        if (divs[i].classList.contains("container")) {
+            divs[i].classList.add("container-fluid");
+            divs[i].classList.remove("container");
+        }
+    }
+}

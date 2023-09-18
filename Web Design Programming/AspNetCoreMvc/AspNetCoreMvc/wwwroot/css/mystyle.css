@@ -1,4 +1,4 @@
-﻿body {
+﻿#html5page {
     font-family: Arial, Helvetica, sans-serif;
     background-image: url(../images/canberra.jpg);
     background-repeat: no-repeat;
@@ -14,17 +14,15 @@ section {
     border-width: 7px;
 }
 
-header {
-    font-size: 20px;
+section > header {
     font-weight: bold;
-    color: brown;
 }
 
 h1, h2, h3, h4, h5, h6, p {
     margin-left: 20px;
 }
 
-ul > li {
+section > ul > li {
     font-weight: bold;
 }
 

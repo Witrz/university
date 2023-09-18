@@ -45,5 +45,6 @@ $(document).ready(function() {
         var newBgColour = 'rgba(' + red + ', ' + green + ', ' + blue + ', ' + alpha + ')';
         // Apply the new background colour to the current section
         $(this).css('background-color', newBgColour);
-        });
+    });
+
 });
