@@ -1,6 +1,5 @@
 torch
 numpy
-sklearn
 pandas
 matplotlib
 scikit-image
