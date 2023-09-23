@@ -1,0 +1,4 @@
+Task1 -> Basic MLP Neural Network is working, requires fine tuning and report completion
+Task2 -> CNN working based on ChatGPT, accuracy is very poor (30%), MLP not complete
+Task3 -> Not started
+Task4 -> time series LSTM copied from tutorial, needs readjustment for dataset.

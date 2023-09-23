@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from skimage import transform
 import torch
+import torch.optim as optim
 import torch.nn as nn
 import torchvision.transforms as transforms
 import torchvision.datasets as dsets
@@ -18,118 +19,77 @@ import math;
 
 # Define a custom dataset class
 class MusicGenresDataset(Dataset):
-    def __init__(self, dataframe, transform=None):
+    def __init__(self, dataframe):
         self.dataframe = dataframe
-        self.transform = transform
 
     def __len__(self):
         return len(self.dataframe)
 
     def __getitem__(self, idx):
-        # Retrieve features and labels from the CSV file
-        features = self.dataframe.iloc[idx, :-1].values.astype(float)
-        label = int(self.dataframe.iloc[idx, -1])
-
-        # Apply transforms if specified
-        if self.transform:
-            features = self.transform(features)
-
+        row = self.dataframe.iloc[idx]
+        features = row[:-1].values.astype(float)
+        label = int(row[-1])
         return torch.tensor(features), torch.tensor(label)
 
 # Load the CSV file
 csv_file = r'./data/task2/music_genre.csv'
-data = rc(csv_file)
+data = pd.read_csv(csv_file)
 
 # Split the data into a 70-30 train/test split
-train_size = int(0.7 * len(data))
-test_size = len(data) - train_size
-train_data, test_data = torch.utils.data.random_split(data, [train_size, test_size])
-train_data = pd.DataFrame(train_data.dataset, columns=data.columns)
-test_data = pd.DataFrame(test_data.dataset, columns=data.columns)
-
-# Define transformations (you can customize these)
-transform = transforms.Compose([transforms.ToTensor()])
-
-# Create custom datasets and data loaders for train and test
-train_dataset = MusicGenresDataset(train_data, transform=transform)
-test_dataset = MusicGenresDataset(test_data, transform=transform)
+train_data, test_data = train_test_split(data, test_size=0.3, random_state=42)
 
 # Define batch size
-num_epochs = 5
-num_classes = 10
 batch_size = 32
-learning_rate = 0.001
 
 # Create data loaders
-train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
-test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
+train_loader = DataLoader(MusicGenresDataset(train_data), batch_size=batch_size, shuffle=True)
+test_loader = DataLoader(MusicGenresDataset(test_data), batch_size=batch_size, shuffle=False)
 
-
-# 3. Set hyperparameter (epoch, learning rate, batch size, number of class)
-# 4. There are 10 classes for this data.
-
-
-# 7. Develop a CNN model including conv2d, batchnormalize, ReLu activation,
-# MaxPool2d, and fully connected layer.
-class CNN(nn.Module):
-    def __init__(self, num_classes):
-        super(CNN, self).__init__()
-        self.layer1 = nn.Sequential(
-        nn.Conv2d(1, 16, kernel_size=5, padding=2),
-        nn.BatchNorm2d(16),
-        nn.ReLU(),
-        nn.MaxPool2d(2))
-        self.layer2 = nn.Sequential(
-        nn.Conv2d(16, 32, kernel_size=5, padding=2),
-        nn.BatchNorm2d(32),
-        nn.ReLU(),
-        nn.MaxPool2d(2))
-        self.fc = nn.Linear(7*7*32, num_classes)
+# Define the CNN model for 1D input features
+class MusicGenresCNN(nn.Module):
+    def __init__(self, input_size, num_classes):
+        super(MusicGenresCNN, self).__init__()
+        self.fc1 = nn.Linear(input_size, 128)
+        self.fc2 = nn.Linear(128, num_classes)
 
     def forward(self, x):
-        out = self.layer1(x)
-        out = self.layer2(out)
-        out = out.view(out.size(0), -1)
-        out = self.fc(out)
-        return out
-    
+        x = torch.relu(self.fc1(x))
+        x = self.fc2(x)
+        return x
 
+# Initialize the CNN model
+input_size = len(data.columns) - 1  # Number of input features (excluding the label)
+num_classes = 10  # Number of classes
+model = MusicGenresCNN(input_size, num_classes)
 
-# 8. Call and run training for the model in the GPU/CPU.
-device ='cpu'
-model = CNN(num_classes).to(device)
+# Define loss function and optimizer
 criterion = nn.CrossEntropyLoss()
-optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
+optimizer = optim.Adam(model.parameters(), lr=0.1)
 
-# 9. Define loss function and optimizer.
-total_step = len(train_loader)
+# Training loop (you may need to adjust the number of epochs)
+num_epochs = 100
 for epoch in range(num_epochs):
-    for i, (images,labels) in enumerate(train_loader):
-        images = Variable(images.float())
-        labels = Variable(labels)
-        # Forward pass
-        outputs = model(images)
-        loss = criterion(outputs, labels)
-        # Backward and optimize
+    model.train()
+    running_loss = 0.0
+    for inputs, labels in train_loader:
         optimizer.zero_grad()
+        outputs = model(inputs.float())
+        loss = criterion(outputs, labels)
         loss.backward()
         optimizer.step()
-        if (i+1) % 100 == 0:
-            print('Epoch [{}/{}], Step [{}/{}], Loss: {:.4f}'.format(epoch+1, num_epochs, i+1, total_step,loss.item()))
+        running_loss += loss.item()
 
+    print(f"Epoch {epoch + 1}/{num_epochs}, Loss: {running_loss / len(train_loader)}")
 
-# 10. Train and validate the model.
-model.eval() # eval mode (batchnorm uses moving mean/variance instead of mini-batch mean/variance)
+# Evaluate the model on the test data
+model.eval()
+correct = 0
+total = 0
 with torch.no_grad():
-    correct = 0
-    total = 0
-    for images, labels in test_loader:
-        images = Variable(images.float())
-        labels = Variable(labels)
-        outputs = model(images)
-        _, predicted = torch.max(outputs.data, 1)
+    for inputs, labels in test_loader:
+        outputs = model(inputs.float())
+        _, predicted = torch.max(outputs, 1)
         total += labels.size(0)
         correct += (predicted == labels).sum().item()
-        print('Test Accuracy of the model on the 10000 test images: {}%'.format(100 * correct / total))
-        torch.save(model.state_dict(), 'model.ckpt')
 
+print(f"Accuracy on test data: {100 * correct / total:.2f}%")
