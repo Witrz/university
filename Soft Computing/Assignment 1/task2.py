@@ -1,95 +1,145 @@
 
-# 1. Import libraries and packages.
-import numpy as np
-import pandas as pd
-from pandas import read_csv as rc
-import matplotlib.pyplot as plt
-from sklearn.model_selection import train_test_split
-from skimage import transform
 import torch
-import torch.optim as optim
 import torch.nn as nn
-import torchvision.transforms as transforms
-import torchvision.datasets as dsets
-from torch.autograd import Variable
-from torch.utils.data import Dataset, DataLoader
-import random;
-import math;
+import torch.optim as optim
+import torch.nn.functional as F
+import pandas as pd
+from torch.utils.data import DataLoader, TensorDataset
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+import matplotlib.pyplot as plt
+from sklearn.metrics import confusion_matrix, classification_report
+import seaborn as sns
+
+# Load and preprocess diabetes dataset
+df = pd.read_csv(r'./data/task2/diabetes_binary.csv')
+X = df.iloc[:, :-1].values
+y = df.iloc[:, -1].values
 
 
-# Define a custom dataset class
-class MusicGenresDataset(Dataset):
-    def __init__(self, dataframe):
-        self.dataframe = dataframe
 
-    def __len__(self):
-        return len(self.dataframe)
+scaler = StandardScaler()
+X = scaler.fit_transform(X)
 
-    def __getitem__(self, idx):
-        row = self.dataframe.iloc[idx]
-        features = row[:-1].values.astype(float)
-        label = int(row[-1])
-        return torch.tensor(features), torch.tensor(label)
+# Split dataset
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.30, random_state=42)
 
-# Load the CSV file
-csv_file = r'./data/task2/music_genre.csv'
-data = pd.read_csv(csv_file)
+X_train = torch.FloatTensor(X_train).unsqueeze(1)
+y_train = torch.LongTensor(y_train)
+X_test = torch.FloatTensor(X_test).unsqueeze(1)
+y_test = torch.LongTensor(y_test)
 
-# Split the data into a 70-30 train/test split
-train_data, test_data = train_test_split(data, test_size=0.3, random_state=42)
 
-# Define batch size
-batch_size = 32
+# Create DataLoader
 
-# Create data loaders
-train_loader = DataLoader(MusicGenresDataset(train_data), batch_size=batch_size, shuffle=True)
-test_loader = DataLoader(MusicGenresDataset(test_data), batch_size=batch_size, shuffle=False)
+train_dataset = TensorDataset(X_train, y_train)
+test_dataset = TensorDataset(X_test, y_test)
 
-# Define the CNN model for 1D input features
-class MusicGenresCNN(nn.Module):
-    def __init__(self, input_size, num_classes):
-        super(MusicGenresCNN, self).__init__()
-        self.fc1 = nn.Linear(input_size, 128)
-        self.fc2 = nn.Linear(128, num_classes)
+for batch in [128]:
+    train_loader = DataLoader(dataset=train_dataset, batch_size=batch, shuffle=True)
+    test_loader = DataLoader(dataset=test_dataset, batch_size=batch, shuffle=False)
+
+
+# Define network architecture
+# Define network architecture
+class DiabetesNet(nn.Module):
+    def __init__(self):
+        super(DiabetesNet, self).__init__()
+        self.layer1 = nn.Sequential(
+            nn.Conv1d(1, 32, kernel_size=3, padding=1),
+            nn.BatchNorm1d(32),
+            nn.ReLU(),
+            nn.MaxPool1d(2))
+        # No layer 2
+        self.layer2 = nn.Sequential(
+            nn.Linear(32 * ((X_train.shape[2] // 2)), 8),  # 
+            nn.Dropout(0.5))
+        self.fc = nn.Linear(8, 2)  # Binary classification
 
     def forward(self, x):
-        x = torch.relu(self.fc1(x))
-        x = self.fc2(x)
-        return x
+        out = self.layer1(x)
+        # No layer 2
+        out = out.view(out.size(0), -1)
+        out = self.layer2(out)
+        out = self.fc(out)
+        return out
 
-# Initialize the CNN model
-input_size = len(data.columns) - 1  # Number of input features (excluding the label)
-num_classes = 10  # Number of classes
-model = MusicGenresCNN(input_size, num_classes)
 
-# Define loss function and optimizer
+# Initialize the model and optimizer
+net = DiabetesNet()
+optimizer = optim.Adam(net.parameters(), lr=0.01)
 criterion = nn.CrossEntropyLoss()
-optimizer = optim.Adam(model.parameters(), lr=0.1)
 
-# Training loop (you may need to adjust the number of epochs)
-num_epochs = 100
+# Tracking variables
+train_losses = []
+test_losses = []
+train_accuracies = []
+test_accuracies = []
+
+num_epochs =100  # Set the number of epochs
+
+# Training loop
 for epoch in range(num_epochs):
-    model.train()
-    running_loss = 0.0
-    for inputs, labels in train_loader:
+    for i, (features, labels) in enumerate(train_loader):
         optimizer.zero_grad()
-        outputs = model(inputs.float())
+        outputs = net(features)
         loss = criterion(outputs, labels)
         loss.backward()
         optimizer.step()
-        running_loss += loss.item()
+    train_losses.append(loss.item())
+    
+    # Validation
+    with torch.no_grad():
+        output = net(X_test)
+        test_loss = criterion(output, y_test)
+        test_losses.append(test_loss.item())
+        
+        # Calculate the training accuracy
+        output_train = net(X_train)
+        _, pred_train = torch.max(output_train, 1)
+        train_accuracy = (pred_train == y_train).float().mean()
+        train_accuracies.append(train_accuracy)
 
-    print(f"Epoch {epoch + 1}/{num_epochs}, Loss: {running_loss / len(train_loader)}")
+        # Calculate the test accuracy
+        _, pred_test = torch.max(output, 1)
+        test_accuracy = (pred_test == y_test).float().mean()
+        test_accuracies.append(test_accuracy)
 
-# Evaluate the model on the test data
-model.eval()
-correct = 0
-total = 0
+    print(f'Epoch [{epoch+1}/{num_epochs}], Loss: {loss.item():.4f}, Test Loss: {test_loss.item():.4f}, Train Accuracy: {train_accuracy:.2f}, Test Accuracy: {test_accuracy:.2f}')
+
+# Plotting the training and test accuracy
+plt.figure()
+plt.plot(train_accuracies, label='Training Accuracy')
+plt.plot(test_accuracies, label='Test Accuracy')
+plt.xlabel('Epochs')
+plt.ylabel('Accuracy')
+plt.legend()
+plt.title('Accuracy vs. Epochs')
+plt.show()
+
+# Plotting the training and test loss
+plt.figure()
+plt.plot(train_losses, label='Training Loss')
+plt.plot(test_losses, label='Test Loss')
+plt.xlabel('Epochs')
+plt.ylabel('Loss')
+plt.legend()
+plt.title('Loss vs. Epochs')
+plt.show()
+
+# Final evaluation
 with torch.no_grad():
-    for inputs, labels in test_loader:
-        outputs = model(inputs.float())
-        _, predicted = torch.max(outputs, 1)
-        total += labels.size(0)
-        correct += (predicted == labels).sum().item()
+    outputs = net(X_test)
+    _, predicted = torch.max(outputs, 1)
+    cm = confusion_matrix(y_test, predicted)
+    cr = classification_report(y_test, predicted)
+    print("Confusion Matrix:")
+    print(cm)
+    print("Classification Report:")
+    print(cr)
 
-print(f"Accuracy on test data: {100 * correct / total:.2f}%")
+    # Heatmap for Confusion Matrix
+    sns.heatmap(cm, annot=True, fmt='d')
+    plt.xlabel('Predicted')
+    plt.ylabel('True')
+    plt.show()

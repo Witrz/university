@@ -1,96 +1,97 @@
-import matplotlib.pyplot as plt
-import numpy as np
 import pandas as pd
+import numpy as np
 import torch
 import torch.nn as nn
-import torch.optim as optim
-import torch.utils.data as data
+from torch.utils.data import Dataset, DataLoader
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.metrics import mean_squared_error
+from sklearn.model_selection import train_test_split
 
-df = pd.read_csv(r"Soft Computing\Tutorial4\data\passengers.csv")
-timeseries = df[["Passengers"]].values.astype('float32')
+# Load your CSV data into a pandas DataFrame
+data = pd.read_csv(r'./data/task4/Alcohol_Sales.csv')
 
-train_size = int(len(timeseries) * 0.80)
-test_size = len(timeseries) - train_size
-train, test = timeseries[:train_size], timeseries[train_size:]
+# Convert 'Month' column to datetime and set it as the index
+data['DATE'] = pd.to_datetime(data['DATE'])
+data.set_index('DATE', inplace=True)
 
+# Normalize the 'Sales' column using Min-Max scaling
+scaler = MinMaxScaler()
+data['SALES'] = scaler.fit_transform(data['SALES'].values.reshape(-1, 1))
 
-def create_dataset(dataset, lookback):
-    """Transform a time series into a prediction dataset
-    Args:
-    dataset: A numpy array of time series, first dimension is the time
-    steps
-    lookback: Size of window for prediction
-    """
-    X, y = [], []
-    for i in range(len(dataset)-lookback):
-        feature = dataset[i:i+lookback]
-        target = dataset[i+1:i+lookback+1]
-        X.append(feature)
-        y.append(target)
-    return torch.tensor(X), torch.tensor(y)
+# Split the data into training and testing sets (70-30 split)
+train_data, test_data = train_test_split(data, test_size=0.3, shuffle=False)
 
-lookback = 12
-X_train, y_train = create_dataset(train, lookback=lookback)
-X_test, y_test = create_dataset(test, lookback=lookback)
+# Define a custom PyTorch dataset
+class TimeSeriesDataset(Dataset):
+    def __init__(self, data, sequence_length):
+        self.data = data.values
+        self.sequence_length = sequence_length
 
-class AirModel(nn.Module):
+    def __len__(self):
+        return len(self.data) - self.sequence_length
 
-    def __init__(self):
-        super().__init__()
-        self.lstm = nn.LSTM(
-            input_size=1,
-            hidden_size=25,
-            num_layers=1,
-            batch_first=True,
-            bidirectional=True)
-        self.linear = nn.Linear(50, 16)
-        self.linear2 = nn.Linear(16, 1)
+    def __getitem__(self, idx):
+        x = self.data[idx:idx + self.sequence_length]
+        y = self.data[idx + self.sequence_length]
+        return torch.FloatTensor(x), torch.FloatTensor(y)
+
+# Create data loaders for training and testing
+lookback = 10  # You can adjust this based on your data
+batch_size = 32
+train_dataset = TimeSeriesDataset(train_data, lookback)
+test_dataset = TimeSeriesDataset(test_data, lookback)
+train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
+test_loader = DataLoader(test_dataset, batch_size=batch_size)
+
+# Define the LSTM model
+class LSTMModel(nn.Module):
+    def __init__(self, input_size, hidden_size, num_layers, output_size):
+        super(LSTMModel, self).__init__()
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers
+        self.lstm = nn.LSTM(input_size, hidden_size, num_layers, batch_first=True)
+        self.fc = nn.Linear(hidden_size, output_size)
 
     def forward(self, x):
-        x, _ = self.lstm(x)
-        x = self.linear(x)
-        x = self.linear2(x)
-        return x
-    
-model = AirModel()
-optimizer = optim.Adam(model.parameters())
-loss_fn = nn.MSELoss()
-loader = data.DataLoader(data.TensorDataset(X_train, y_train),
-shuffle=True, batch_size=8)
-n_epochs = 3000
+        h0 = torch.zeros(self.num_layers, x.size(0), self.hidden_size).to(x.device)
+        c0 = torch.zeros(self.num_layers, x.size(0), self.hidden_size).to(x.device)
+        out, _ = self.lstm(x, (h0, c0))
+        out = self.fc(out[:, -1, :])  # Take the output of the last time step
+        return out
 
-for epoch in range(n_epochs):
-    model.train()
-    for X_batch, y_batch in loader:
-        y_pred = model(X_batch)
-        loss = loss_fn(y_pred, y_batch)
+# Initialize the model and set hyperparameters
+input_size = 1  # Number of features (Sales column)
+hidden_size = 50
+num_layers = 2
+output_size = 1  # Predicting a single value (Sales)
+model = LSTMModel(input_size, hidden_size, num_layers, output_size)
+criterion = nn.MSELoss()
+optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
+
+# Training loop
+num_epochs = 100
+for epoch in range(num_epochs):
+    for i, (x, y) in enumerate(train_loader):
         optimizer.zero_grad()
+        outputs = model(x)
+        loss = criterion(outputs, y)
         loss.backward()
         optimizer.step()
-        # Validation
-    if epoch % 100 != 0:
-        continue
-    model.eval()
-    with torch.no_grad():
-        y_pred = model(X_train)
-        train_rmse = np.sqrt(loss_fn(y_pred, y_train))
-        y_pred = model(X_test)
-        test_rmse = np.sqrt(loss_fn(y_pred, y_test))
-        print("Epoch %d: train RMSE %.4f, test RMSE %.4f" % (epoch,
-        train_rmse, test_rmse))
+        
+    print(f'Epoch [{epoch+1}/{num_epochs}], Loss: {loss.item():.4f}')
+
+# Evaluation
+model.eval()
+test_losses = []
 with torch.no_grad():
-    # shift train predictions for plotting
-    train_plot = np.ones_like(timeseries) * np.nan
-    y_pred = model(X_train)
-    y_pred = y_pred[:, -1, :]
-    train_plot[lookback:train_size] = model(X_train)[:, -1, :]
-    # shift test predictions for plotting
-    test_plot = np.ones_like(timeseries) * np.nan
-    test_plot[train_size+lookback:len(timeseries)] = model(X_test)[:, -1,
-    :]
-# plot
-plt.plot(timeseries)
-plt.plot(train_plot, c='r')
-plt.plot(test_plot, c='g')
-plt.show()
+    for x, y in test_loader:
+        outputs = model(x)
+        test_loss = criterion(outputs, y)
+        test_losses.append(test_loss.item())
+
+# Calculate and print the mean squared error on the test set
+test_mse = np.mean(test_losses)
+print(f'Test Mean Squared Error: {test_mse:.4f}')
+
+# You can also convert the predictions back to the original scale using scaler.inverse_transform if needed.
 
