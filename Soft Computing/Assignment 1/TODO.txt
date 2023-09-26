@@ -1,4 +1,4 @@
-Task1 -> Basic MLP Neural Network is working, requires fine tuning and report completion
-Task2 -> CNN working based on ChatGPT, accuracy is very poor (30%), MLP not complete
-Task3 -> Not started
-Task4 -> time series LSTM copied from tutorial, needs readjustment for dataset.
+Task1 -> Pytorch MLP is completed - Reports needs to be completed
+Task2 -> CNN is working, MLP is also working. Both coming to similar conclusions - Report needs to be completed
+Task3 -> Need to import images into the code before using them as an input to the Pretrained model. - Ask Hakki - Report also needs to be completed.
+Task4 -> LSTM Completed - Report needs to be completed
