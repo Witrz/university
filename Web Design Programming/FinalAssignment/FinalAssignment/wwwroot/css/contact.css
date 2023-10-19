@@ -1,0 +1,60 @@
+﻿
+.contact-container {
+    background-color: #100c3c70;
+    border: 1px solid white;
+    box-shadow: 7px 7px lightyellow;
+    height: 250px;
+    color: yellow;
+    text-align: center;
+}
+
+.contact-container > h1 {
+    margin-left: 5%;
+    margin-right: 5%;
+    border-bottom: 1px solid yellow;
+    font-family: 'Script MT', sans-serif;
+    font-weight: 400;
+}
+
+#contact-title {
+    font-family: 'Anton', sans-serif;
+    background-image: linear-gradient(to right, brown, brown, yellow, white, yellow, brown, brown);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 9vw 2vw 0vw 2vw;
+    text-align: center;
+    font-size: 8vw;
+}
+
+
+ /*Media queries 
+ Very large laptop and desktop screens*/
+@media (min-width: 1200px) {
+}
+/*Large laptop/desktop screens*/
+@media (min-width: 992px) and (max-width: 1200px) {
+}
+/*Standard laptop/desktop screens*/
+@media (min-width: 768px) and (max-width: 992px) {
+}
+/*Tablet screens*/
+@media (min-width: 576px) and (max-width: 768px) {
+    .contact-container {
+        box-shadow: none;
+        border: none;
+        --bs-gutter-y: 0;
+    }
+    div {
+        margin-top: 0 !important;
+    }
+}
+/*Mobile phone screens*/
+@media (max-width: 576px) {
+    .contact-container {
+        box-shadow: none;
+        border: none;
+    }
+    div {
+        margin-top: 0!important;
+    }
+}

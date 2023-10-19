@@ -1,5 +1,6 @@
 ﻿using AspNetCoreMvc.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Diagnostics;
 
 namespace AspNetCoreMvc.Controllers
@@ -15,6 +16,11 @@ namespace AspNetCoreMvc.Controllers
 
         public IActionResult Index()
         {
+            var assignment1Mark = 27;
+            var assignment2Mark = 27;
+            var tutorialMark = 36;
+            var totalMark = assignment1Mark + assignment2Mark + tutorialMark;
+            ViewBag.MyTotalMark = totalMark;
             return View();
         }
 

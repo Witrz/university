@@ -11,36 +11,28 @@ import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix, classification_report
 import seaborn as sns
 
-# Load and preprocess diabetes dataset
+# Load dataset
 df = pd.read_csv(r'./data/task2/diabetes_binary.csv')
 X = df.iloc[:, :-1].values
 y = df.iloc[:, -1].values
 
-
-
+#scale X array
 scaler = StandardScaler()
 X = scaler.fit_transform(X)
 
-# Split dataset
+# Split and Create Dataset
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.30, random_state=42)
 
 X_train = torch.FloatTensor(X_train).unsqueeze(1)
 y_train = torch.LongTensor(y_train)
 X_test = torch.FloatTensor(X_test).unsqueeze(1)
 y_test = torch.LongTensor(y_test)
-
-
-# Create DataLoader
-
 train_dataset = TensorDataset(X_train, y_train)
 test_dataset = TensorDataset(X_test, y_test)
-
 for batch in [128]:
     train_loader = DataLoader(dataset=train_dataset, batch_size=batch, shuffle=True)
     test_loader = DataLoader(dataset=test_dataset, batch_size=batch, shuffle=False)
 
-
-# Define network architecture
 # Define network architecture
 class DiabetesNet(nn.Module):
     def __init__(self):
@@ -64,19 +56,18 @@ class DiabetesNet(nn.Module):
         out = self.fc(out)
         return out
 
-
 # Initialize the model and optimizer
 net = DiabetesNet()
 optimizer = optim.Adam(net.parameters(), lr=0.01)
 criterion = nn.CrossEntropyLoss()
 
-# Tracking variables
+# Tracking Loss and Accuracy
 train_losses = []
 test_losses = []
 train_accuracies = []
 test_accuracies = []
 
-num_epochs =100  # Set the number of epochs
+num_epochs = 50  # Set the number of epochs
 
 # Training loop
 for epoch in range(num_epochs):

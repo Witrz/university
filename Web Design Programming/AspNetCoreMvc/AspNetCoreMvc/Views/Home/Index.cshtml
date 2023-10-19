@@ -4,5 +4,14 @@
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
+    @{
+        var assignment1Mark = 27;
+        var assignment2Mark = 27;
+        var tutorialMark = 36;
+        var totalMark = assignment1Mark + assignment2Mark + tutorialMark;
+    }
+    <h4>My total mark: @totalMark</h4>
+    <h4>My total mark from ViewBag: @ViewBag.MyTotalMark</h4>
+    <h4>My total mark from ViewData: @ViewData["MyTotalMark"]</h4>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>

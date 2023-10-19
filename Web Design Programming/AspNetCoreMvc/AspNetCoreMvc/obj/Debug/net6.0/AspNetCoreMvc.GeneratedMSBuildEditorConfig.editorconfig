@@ -20,6 +20,26 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/2. University of Canberra/9. Semester 2\, 2023/Web Design Programming/AspNetCoreMvc/AspNetCoreMvc/Views/DiscussionForums/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzY3Vzc2lvbkZvcnVtc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/2. University of Canberra/9. Semester 2\, 2023/Web Design Programming/AspNetCoreMvc/AspNetCoreMvc/Views/DiscussionForums/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzY3Vzc2lvbkZvcnVtc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/2. University of Canberra/9. Semester 2\, 2023/Web Design Programming/AspNetCoreMvc/AspNetCoreMvc/Views/DiscussionForums/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzY3Vzc2lvbkZvcnVtc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/2. University of Canberra/9. Semester 2\, 2023/Web Design Programming/AspNetCoreMvc/AspNetCoreMvc/Views/DiscussionForums/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzY3Vzc2lvbkZvcnVtc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/2. University of Canberra/9. Semester 2\, 2023/Web Design Programming/AspNetCoreMvc/AspNetCoreMvc/Views/DiscussionForums/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzY3Vzc2lvbkZvcnVtc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/2. University of Canberra/9. Semester 2\, 2023/Web Design Programming/AspNetCoreMvc/AspNetCoreMvc/Views/Home/HTML5Tutorial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIVE1MNVR1dG9yaWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -42,6 +62,26 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/2. University of Canberra/9. Semester 2\, 2023/Web Design Programming/AspNetCoreMvc/AspNetCoreMvc/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/2. University of Canberra/9. Semester 2\, 2023/Web Design Programming/AspNetCoreMvc/AspNetCoreMvc/Views/Tutorials/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHV0b3JpYWxzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/2. University of Canberra/9. Semester 2\, 2023/Web Design Programming/AspNetCoreMvc/AspNetCoreMvc/Views/Tutorials/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHV0b3JpYWxzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/2. University of Canberra/9. Semester 2\, 2023/Web Design Programming/AspNetCoreMvc/AspNetCoreMvc/Views/Tutorials/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHV0b3JpYWxzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/2. University of Canberra/9. Semester 2\, 2023/Web Design Programming/AspNetCoreMvc/AspNetCoreMvc/Views/Tutorials/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHV0b3JpYWxzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/2. University of Canberra/9. Semester 2\, 2023/Web Design Programming/AspNetCoreMvc/AspNetCoreMvc/Views/Tutorials/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHV0b3JpYWxzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/2. University of Canberra/9. Semester 2\, 2023/Web Design Programming/AspNetCoreMvc/AspNetCoreMvc/Views/_ViewImports.cshtml]

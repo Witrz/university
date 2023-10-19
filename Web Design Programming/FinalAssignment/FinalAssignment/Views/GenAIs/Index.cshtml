@@ -1,0 +1,45 @@
+﻿@model IEnumerable<FinalAssignment.Models.GenAI>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="index-title">
+    <h1 id="home-title"> Generative AI Websites</h1>
+
+    <p>
+        <a asp-action="Create">Click here to add a new generative AI website </a>
+    </p>
+</div>
+
+<div id="model-container" class="item-list">
+    @foreach (var item in Model)
+    {
+        <div id="@item.ImageFilename" class="row gx-0 adjust-height">
+            <div class="image-container col-md-3 col-sm-12 col-12">
+                <img class="index-image" src="../images/@(item.ImageFilename + ".jpg")"/>
+            </div>
+            <section class="col-md-9 col-sm-12 col-12 index-content">
+                <div class="m-5">
+                    <h2 class="index-item-title">@Html.DisplayFor(modelItem => item.GenAIName)</h2>
+                    <p>@Html.DisplayFor(modelItem => item.Summary)</p>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        @if (User.IsInRole("admin"))
+                        {
+                            <a asp-action="IncreaseLike" class="btn btn-primary" asp-route-id="@item.Id">Like(@item.Like)</a>
+                            <a asp-action="Edit" class="btn btn-success" asp-route-id="@item.Id">Edit</a>
+                            <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.Id">Delete</a>
+                        }
+                        @if (User.IsInRole("user"))
+                        {
+                            <a asp-action="IncreaseLike" class="btn btn-primary" asp-route-id="@item.Id">Like(@item.Like)</a>
+                        }
+                    }
+                </div>
+            </section>
+        </div>
+    }
+</div>
+
+<script src="~/js/genaisites.js"></script>
+

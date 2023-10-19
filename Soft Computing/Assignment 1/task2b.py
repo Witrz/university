@@ -33,11 +33,11 @@ y_test = torch.LongTensor(y_test)
 class DermatologyMLPClassifier(nn.Module):
     def __init__(self, input_dim, output_dim):
         super().__init__()
-        self.hidden1 = nn.Linear(input_dim, 128)
+        self.hidden1 = nn.Linear(input_dim, 80)
         self.act1 = nn.ReLU()
-        self.hidden2 = nn.Linear(128, 64)
+        self.hidden2 = nn.Linear(80, 32)
         self.act2 = nn.ReLU()
-        self.output = nn.Linear(64, output_dim)
+        self.output = nn.Linear(32, output_dim)
         self.act_output = nn.Sigmoid()
 
     def forward(self, x):
@@ -53,7 +53,7 @@ output_dim = 2
 model = DermatologyMLPClassifier(input_dim, output_dim)
 
 # creating our optimizer and loss function object
-learning_rate = 0.0001
+learning_rate = 0.001
 criterion = nn.CrossEntropyLoss()
 optimizer = torch.optim.Adam(model.parameters(),lr=learning_rate)
 def train_network(model,optimizer,criterion,X_train,y_train,X_test,y_test,num_epochs,train_losses,test_losses):
@@ -74,7 +74,7 @@ def train_network(model,optimizer,criterion,X_train,y_train,X_test,y_test,num_ep
         test_losses[epoch] = loss_test.item()
         if (epoch + 1) % 50 == 0:
             print(f"Epoch {epoch+1}/{num_epochs}, Train Loss: {loss_train.item():.4f}, Test Loss: {loss_test.item():.4f}")
-num_epochs = 1000
+num_epochs = 220
 train_losses = np.zeros(num_epochs)
 test_losses = np.zeros(num_epochs)
 train_network(model,optimizer,criterion,X_train,y_train,X_test,y_test,num_epochs,train_losses,test_losses)

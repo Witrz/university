@@ -1,0 +1,46 @@
+﻿@{
+    Layout = null;
+}
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/FinalAssignment.styles.css" asp-append-version="true" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Niconne" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="~/css/elastic-grid.min.css" type="text/css" />
+<link rel="stylesheet" href="~/css/genai.css" type="text/css" />
+
+
+@*<div id="elasticGrid"></div>*@
+
+<div id="genaitools" class="gen-ai-section genai-tools">
+    <div>
+        <h1 class="genai-titles">
+            GenAI Tools
+        </h1>
+    </div>
+    <div id="tools"></div>
+    
+</div>
+<div id="genaiorgs" class="gen-ai-section genai-orgs">
+    <div>
+        <h1 class="genai-titles">
+            GenAI Orgs
+        </h1>
+    </div>
+    <div id="orgs"></div>
+</div>
+<div id="genaiapps" class="gen-ai-section genai-apps">
+    <div>
+        <h1 class="genai-titles">
+            GenAI Apps
+        </h1>
+    </div>
+    <div id="apps" class="jquery-container"></div>
+</div>
+
+<script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"></script>
+<script src="~/js/modernizr.custom.js"></script>
+<script src="~/js/classie.js"></script>
+<script src="~/js/elastic_grid.min.js"></script>
+<script src="~/js/genai.js"></script>

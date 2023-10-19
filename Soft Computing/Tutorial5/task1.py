@@ -6,7 +6,7 @@ import torch.nn as nn
 import torch.optim as optim
 import torch.utils.data as data
 
-df = pd.read_csv(r"Soft Computing\Tutorial4\data\passengers.csv")
+df = pd.read_csv(r"./data/passengers.csv")
 timeseries = df[["Passengers"]].values.astype('float32')
 
 train_size = int(len(timeseries) * 0.80)
@@ -84,10 +84,12 @@ with torch.no_grad():
     y_pred = model(X_train)
     y_pred = y_pred[:, -1, :]
     train_plot[lookback:train_size] = model(X_train)[:, -1, :]
+    print(train_plot)
     # shift test predictions for plotting
     test_plot = np.ones_like(timeseries) * np.nan
-    test_plot[train_size+lookback:len(timeseries)] = model(X_test)[:, -1,
-    :]
+    test_plot[train_size+lookback:len(timeseries)] = model(X_test)[:, -1, :]
+    print(test_plot)
+
 # plot
 plt.plot(timeseries)
 plt.plot(train_plot, c='r')

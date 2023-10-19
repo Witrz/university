@@ -1,0 +1,154 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<article id="home-page">
+    <section id="s1" class="text-center">
+        <video id="background-video" autoplay="autoplay" loop muted preload="auto" poster="../media/background/bg2.jpg">
+            <source src="../media/video.mp4" type="video/mp4">
+        </video>
+        <div class="video-cover-element"></div>
+        <h1 id="home-title"> Generative AI Technology </h1>
+        <span class="container">
+            <p id="home-paragraph">
+                Any time an AI technology is generating something on its own, it can be referred to as
+                "generative AI." This umbrella term includes learning algorithms that make predictions
+                as well as those that can use prompts to autonomously write articles and paint pictures.
+                <br><i> Techopedia </i>
+            </p>
+        </span>
+    </section>
+    <div id="homepage-content" class="flex flex-column justify-content-between">
+        <section id="s2" class="container row mx-auto content-section">
+            <div class="col-md-6 col-sm-12 my-4">
+                <h1>
+                    GenAI Tools
+                </h1>
+                <p>
+                    Generative AI tools refer to software or systems that use neural network techniques to
+                    process and comprehend input data, subsequently producing meaningful responses.
+                    <i>Scribehow</i>  <a href="Home/GenAI#genaitools" class="btn btn-outline-light"> Read More </a>
+                </p>
+            </div>
+            <div class="col-md-6 col-sm-12 row my-4">
+                <div class="col-6">
+                    <img src="~/media/genaisites/bard.jpg" alt="Google Bard" class="img-fluid">
+                </div>
+                <div class="col-6">
+                    <img src="~/media/genaisites/midjourney.jpg" alt="Midjourney" class="img-fluid">
+                </div>
+            </div>
+        </section>
+        <section id="s3" class="container row mx-auto content-section">
+            <div class="col-md-6 col-sm-12 row my-4">
+                <div class="col-6">
+                    <img src="~/media/genaisites/google.jpg" alt="Google" class="img-fluid">
+                </div>
+                <div class="col-6">
+                    <img src="~/media/genaisites/microsoft.jpg" alt="Microsoft" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12 my-4">
+                <h1>
+                    GenAI Organisations
+                </h1>
+                <p>
+                    Generative AI Organizations like Microsoft, Google, Amazon and IBM have invested
+                    hundreds of millions of dollars and massive compute power to build the foundational
+                    models on which services like ChatGPT and others depend. <i> Gartner </i><a href="Home/GenAI#genaiorgs" class="btn btn-outline-light"> Read More </a>
+                </p>
+            </div>
+        </section>
+
+        <section id="s4" class="container row mx-auto content-section">
+            <div class="col-md-6 col-sm-12 my-4">
+                <h1>
+                    GenAI Applications
+                </h1>
+                <p>
+                    <strong>Text:</strong> GPT-3, LaMDA, LLaMA, BLOOM and GPT-4.<br />
+                    <strong>Code:</strong> OpenAI Codex.<br />
+                    <strong>Images:</strong> DALL-E, Midjourney and Stable Diffusion.<br />
+                    <strong>Video:</strong> Make-A-Video (Meta Platforms).<br />
+                    <i>Wikipedia</i> <a href="Home/GenAI#genaiapps" class="btn btn-outline-light"> Read More </a>
+                </p>
+            </div>
+            <div class="col-md-6 col-sm-12 row my-4">
+                <div class="col-6">
+                    <img src="~/media/genaisites/chatgpt.jpg" alt="ChatGPT" class="img-fluid">
+                </div>
+                <div class="col-6">
+                    <img src="~/media/genaisites/dalle.jpg" alt="Dall-E" class="img-fluid">
+                </div>
+            </div>
+        
+        </section>
+
+        <section id="s5" class="container row mx-auto content-section">
+            <div class="col-md-6 col-sm-12 row my-4">
+                <div class="col-6">
+                    <img src="~/media/genaisites/pie.jpg" alt="Pie Chart" class="img-fluid">
+                </div>
+                <div class="col-6" >
+                    <img src="~/media/genaisites/job.jpg" alt="Jobs Fella" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12 my-4">
+                <h1>
+                    AI Jobs
+                </h1>
+                <p>
+                    The prime source for jobs and talents in AI, ML, Data Science and Big Data:
+                    <a href="https://ai-jobs.net/">
+                        Insights AI-Jobs
+                    </a><br/>
+                    Python source for tables and charts:
+                    <a href="https://www.kaggle.com/code/sowrabhghosh/data-science-salary-2020-22-analysis">
+                        Kaggle.
+                    </a>
+
+                    <a asp-controller="Home" asp-action="GenAI" class="btn btn-outline-light"> Read More </a>
+                </p>
+            </div>
+        </section>
+        <section id="s6" class="container row m-auto text-center">
+            <div class="gen-ai-websites col-12">
+                <h1> List of Generative AI Websites </h1>
+                @{
+                    if (User.Identity.IsAuthenticated)
+                    {
+                        <p>
+                            <a asp-area="" asp-controller="GenAIs" asp-action="Create"> Click here to add a new generative AI website </a>
+                        </p>
+                    }
+                    else{
+                        <p>
+                        Please <a asp-area="Identity" asp-page="/Account/Login">login</a> or <a asp-area="Identity" asp-page="/Account/Register">register</a> to add a new generative AI website
+                        </p>
+                    }
+
+                    if (User.Identity.IsAuthenticated)
+                    {
+                        <div id="genai-websites-wrapper" class="row">
+                        @{
+                            foreach(var i in Model)
+                            {
+                                <div class="col-md-2 col-sm-4 col-6">
+                                    <figure>
+                                        <a href="@i.AnchorLink">
+                                            <img class="img-fluid" src="../images/@(i.ImageFilename + ".jpg")" />
+                                            <figcaption class="fig-caption"> @i.GenAIName </figcaption>
+                                        </a>
+                                    </figure>
+                                </div>
+                            }
+                        }
+                        </div>
+                    }
+                 } 
+        </section>
+    </div>
+</article>
+
+<script src="~/js/home.js"></script>
+

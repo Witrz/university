@@ -1,180 +1,132 @@
-# importing the libraries
-import pandas as pd
-import numpy as np
-from tqdm import tqdm
-
-# for reading and displaying images
-from skimage.io import imread
-from skimage.transform import resize
-import matplotlib.pyplot as plt
-
-# for creating validation set
-from sklearn.model_selection import train_test_split
-
-# for evaluating the model
-from sklearn.metrics import accuracy_score
-
-# PyTorch libraries and modules
+import os
 import torch
-from torch.autograd import Variable
-from torch.nn import Linear, ReLU, CrossEntropyLoss, Sequential, Conv2d, MaxPool2d, Module, Softmax, BatchNorm2d, Dropout
-from torch.optim import Adam, SGD
-
-# torchvision for pre-trained models
+import torch.nn as nn
+import torch.optim as optim
+import torchvision.transforms as transforms
+import torchvision.datasets as datasets
+from torch.utils.data import DataLoader
 from torchvision import models
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.metrics import confusion_matrix, classification_report, f1_score
 
+#download directory
+os.environ['TORCH_HOME'] = r'./data'
 
+# Create Transformations
+transform = transforms.Compose([
+    transforms.Resize((224, 224)),
+    transforms.RandomHorizontalFlip(),
+    transforms.ToTensor(),
+    transforms.Normalize([0.5, 0.5, 0.5], [0.2, 0.2, 0.2])
+])
 
-## Load Images from data directory Task 3
-## Train the pretrained model below on the image data
+# Load Data, Set Dataloaders
+train_dataset = datasets.ImageFolder(root=r'./data/task3/ChestXray/train', transform=transform)
+test_dataset = datasets.ImageFolder(root=r'./data/task3/ChestXray/test', transform=transform)
+train_loader = DataLoader(train_dataset, batch_size=64, shuffle=True)
+test_loader = DataLoader(test_dataset, batch_size=64, shuffle=True)
 
-model = models.vgg16_bn(pretrained=True)
-
-# Freeze model weights
+# Load the pretrained AlexNet model and freeze its weights
+model = models.alexnet(pretrained=True)
 for param in model.parameters():
     param.requires_grad = False
 
-# checking if GPU is available
-#if torch.cuda.is_available():
-#model = model.cuda()
+# Modify the classifier to include a Dropout layer before the final Linear layer
+model.classifier = nn.Sequential(*list(model.classifier.children())[:-1], nn.Dropout(0.5), nn.Linear(4096, 2))
 
-# Add on classifier
-model.classifier[6] = Sequential(
-                      Linear(4096, 2))
-for param in model.classifier[6].parameters():
-    param.requires_grad = True
+# Set Cuda if available, set CPU if not.
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+model.to(device)
 
-# batch_size
-batch_size = 128
+# Define Loss function and optimizer for the final layer
+criterion = nn.CrossEntropyLoss()
+optimizer = optim.Adam(model.classifier[-1].parameters(), lr=0.001)
 
-# extracting features for train data
-data_x = []
-label_x = []
+# Metrics Storage
+train_losses, test_losses, train_accuracies, test_accuracies = [], [], [], []
 
-inputs,labels = train_x, train_y
-
-for i in tqdm(range(int(train_x.shape[0]/batch_size)+1)):
-    input_data = inputs[i*batch_size:(i+1)*batch_size]
-    label_data = labels[i*batch_size:(i+1)*batch_size]
-    input_data , label_data = Variable(input_data),Variable(label_data)
-    x = model.features(input_data)
-    data_x.extend(x.data.cpu().numpy())
-    label_x.extend(label_data.data.cpu().numpy())
-    
-# extracting features for validation data
-data_y = []
-label_y = []
-
-inputs,labels = val_x, val_y
-
-for i in tqdm(range(int(val_x.shape[0]/batch_size)+1)):
-    input_data = inputs[i*batch_size:(i+1)*batch_size]
-    label_data = labels[i*batch_size:(i+1)*batch_size]
-    input_data , label_data = Variable(input_data),Variable(label_data)
-    x = model.features(input_data)
-    data_y.extend(x.data.cpu().numpy())
-    label_y.extend(label_data.data.cpu().numpy())
-
-# converting the features into torch format
-x_train  = torch.from_numpy(np.array(data_x))
-x_train = x_train.view(x_train.size(0), -1)
-y_train  = torch.from_numpy(np.array(label_x))
-x_val  = torch.from_numpy(np.array(data_y))
-x_val = x_val.view(x_val.size(0), -1)
-y_val  = torch.from_numpy(np.array(label_y))
-
-import torch.optim as optim
-
-# specify loss function (categorical cross-entropy)
-criterion = CrossEntropyLoss()
-
-# specify optimizer (stochastic gradient descent) and learning rate
-optimizer = optim.Adam(model.classifier[6].parameters(), lr=0.0005)
-
-# batch size
-batch_size = 128
-
-# number of epochs to train the model
-n_epochs = 30
-
-for epoch in tqdm(range(1, n_epochs+1)):
-
-    # keep track of training and validation loss
+# Training Loop
+num_epochs = 11
+for epoch in range(num_epochs):
+    model.train()
     train_loss = 0.0
-        
-    permutation = torch.randperm(x_train.size()[0])
+    correct_train = 0
+    total_train = 0
 
-    training_loss = []
-    for i in range(0,x_train.size()[0], batch_size):
+    for batch_idx, (data, targets) in enumerate(train_loader):
+        data, targets = data.to(device), targets.to(device)
 
-        indices = permutation[i:i+batch_size]
-        batch_x, batch_y = x_train[indices], y_train[indices]
-        
-        #if torch.cuda.is_available():
-        batch_x, batch_y = batch_x, batch_y.long()
-        
+        outputs = model(data)
+        loss = criterion(outputs, targets)
         optimizer.zero_grad()
-        # in case you wanted a semi-full example
-        outputs = model.classifier(batch_x)
-        loss = criterion(outputs,batch_y.long())
-
-        training_loss.append(loss.item())
         loss.backward()
         optimizer.step()
-        
-    training_loss = np.average(training_loss)
-    print('epoch: \t', epoch, '\t training loss: \t', training_loss)
 
-# prediction for training set
-prediction = []
-target = []
-permutation = torch.randperm(x_train.size()[0])
-for i in tqdm(range(0,x_train.size()[0], batch_size)):
-    indices = permutation[i:i+batch_size]
-    batch_x, batch_y = x_train[indices], y_train[indices]
+        train_loss += loss.item()
+        _, predicted = outputs.max(1)
+        correct_train += predicted.eq(targets).sum().item()
+        total_train += targets.size(0)
 
-    #if torch.cuda.is_available():
-    batch_x, batch_y = batch_x, batch_y.long()
+    # Metrics after the epoch
+    train_losses.append(train_loss/len(train_loader))
+    train_accuracies.append(100. * correct_train / total_train)
 
+    # Validation
+    model.eval()
+    test_loss = 0.0
+    correct_test = 0
+    total_test = 0
+    all_labels_test, all_preds_test = [], []
     with torch.no_grad():
-        output = model.classifier(batch_x)
+        for data, targets in test_loader:
+            data, targets = data.to(device), targets.to(device)
+            outputs = model(data)
+            loss = criterion(outputs, targets)
+            test_loss += loss.item()
+            _, predicted = outputs.max(1)
+            correct_test += predicted.eq(targets).sum().item()
+            total_test += targets.size(0)
 
-    softmax = torch.exp(output).cpu()
-    prob = list(softmax.numpy())
-    predictions = np.argmax(prob, axis=1)
-    prediction.append(predictions)
-    target.append(batch_y.long())
-    
-# training accuracy
-accuracy = []
-for i in range(len(prediction)):
-    accuracy.append(accuracy_score(target[i],prediction[i]))
-    
-print('training accuracy: \t', np.average(accuracy))
+            all_labels_test.extend(targets.cpu().numpy())
+            all_preds_test.extend(predicted.cpu().numpy())
 
-# prediction for validation set
-prediction_val = []
-target_val = []
-permutation = torch.randperm(x_val.size()[0])
-for i in tqdm(range(0,x_val.size()[0], batch_size)):
-    indices = permutation[i:i+batch_size]
-    batch_x, batch_y = x_val[indices], y_val[indices]
+    test_losses.append(test_loss/len(test_loader))
+    test_accuracies.append(100. * correct_test / total_test)
 
-    #if torch.cuda.is_available():
-    batch_x, batch_y = batch_x, batch_y.long()
+    print(f"Epoch {epoch+1}/{num_epochs}, Train Loss: {train_losses[-1]:.4f}, Test Loss: {test_losses[-1]:.4f}, Train Accuracy: {train_accuracies[-1]:.2f}%, Test Accuracy: {test_accuracies[-1]:.2f}%")
 
-    with torch.no_grad():
-        output = model.classifier(batch_x)
+# Plots
+plt.figure()
+plt.plot(train_accuracies, label='Training Accuracy')
+plt.plot(test_accuracies, label='Test Accuracy')
+plt.xlabel('Epochs')
+plt.ylabel('Accuracy')
+plt.legend()
+plt.title('Accuracy vs. Epochs')
+plt.show()
 
-    softmax = torch.exp(output).cpu()
-    prob = list(softmax.numpy())
-    predictions = np.argmax(prob, axis=1)
-    prediction_val.append(predictions)
-    target_val.append(batch_y.long())
-    
-# validation accuracy
-accuracy_val = []
-for i in range(len(prediction_val)):
-    accuracy_val.append(accuracy_score(target_val[i],prediction_val[i]))
-    
-print('validation accuracy: \t', np.average(accuracy_val))
+plt.figure()
+plt.plot(train_losses, label='Training Loss')
+plt.plot(test_losses, label='Test Loss')
+plt.xlabel('Epochs')
+plt.ylabel('Loss')
+plt.legend()
+plt.title('Loss vs. Epochs')
+plt.show()
+
+# Final evaluation
+test_f1 = f1_score(all_labels_test, all_preds_test, average='macro')
+cm = confusion_matrix(all_labels_test, all_preds_test)
+cr = classification_report(all_labels_test, all_preds_test)
+print("Test F1 Score:", test_f1)
+print("Confusion Matrix:")
+print(cm)
+print("Classification Report:")
+print(cr)
+
+# Heatmap for Confusion Matrix
+sns.heatmap(cm, annot=True, fmt='d')
+plt.xlabel('Predicted')
+plt.ylabel('True')
+plt.show()

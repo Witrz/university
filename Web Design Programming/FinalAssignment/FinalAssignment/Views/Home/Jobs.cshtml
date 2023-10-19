@@ -1,0 +1,79 @@
+﻿@{
+    ViewData["Title"] = "Jobs";
+}
+<link rel="stylesheet" href="~/css/jobs.css" />
+
+<link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+<script defer src="https://pyscript.net/latest/pyscript.js"></script>
+<py-config>
+    packages = ["matplotlib", "pandas", "seaborn"]
+</py-config>
+<py-script>
+    import pandas as pd
+    import matplotlib.pyplot as plt
+    import seaborn as sns
+    from pyodide.http import open_url
+    url = open_url('..\csv\salaries2023.csv')
+    df = pd.read_csv(url)
+    display(df.head(n=7), target="table", append=False)
+
+    plt.figure(1, figsize=(9, 4))
+    sns.barplot(x='work_year', y='salary_in_usd', hue='work_year', data=df)
+    plt.title("Salaries")
+    display(plt, target="barchart", append=False)
+
+    plt.figure(2)
+    top_jobs = df.job_title.value_counts()[: 7]
+    m = df.shape[0]
+    job_distribution = top_jobs*100/m
+    job_distribution.plot(kind = 'pie', autopct = '%1.0f%%', figsize = (9, 4))
+    plt.title('Job distribution among top 10 in demand job title')
+    display(plt, target="piechart", append=False)
+
+</py-script>
+
+<article id="jobs-page">
+    <section class="text-center">
+        <div class="title-section">
+        </div>
+        <div class="jobs-title">
+            <h1 id="jobs-title"> AI Jobs </h1>
+            <p>AI job dataset: Insights AI-Jobs</p>
+            <p>Python source for tables and charts: Kaggle</p>
+        </div>
+    </section>
+    <section class="container">
+        <hr />
+        <section class="row gx-5">
+            <div class="col-md-3 col-sm-12 col-12 jobs-content">
+                <h1> Top 5 Companies </h1>
+                <p><i>according to number of employees</i></p>
+            </div>
+            <div id="table" class="col-md-9 col-sm-12 col-12">
+            </div>
+        </section>
+        <hr />
+        <section class="row gx-5">
+            <div id="piechart" class="col-md-9 col-sm-12 col-12">
+            </div>
+            <div class="col-md-3 col-sm-12 col-12 jobs-content">
+                <h1> Job Distribution </h1>
+                <p><i>among top 10 in demand job title</i></p>
+            </div>
+        </section>
+        <hr />
+        <section class="row gx-5">
+            <div class="col-md-3 col-sm-12 col-12 jobs-content">
+                <h1>Salaries</h1>
+                <p><i>in the last 3 years</i></p>
+            </div>
+            <div class="col-md-9 col-sm-12 col-12">
+                <div id="barchart"></div>
+            </div>
+        </section>
+    </section>
+    
+</article>
+
+
+<script src="~/js/jobs.js"></script>

@@ -1,0 +1,33 @@
+﻿.gen-ai-section{
+    width: 100vw;
+    height: 100vh;
+}
+
+.genai-tools{
+    background-image: url(../media/background/bg5.jpg);
+}
+
+.genai-orgs {
+    background-image: url(../media/background/bg6.jpg);
+}
+
+.genai-apps {
+    background-image: url(../media/background/bg7.jpg);
+}
+
+.genai-titles {
+    font-family: 'Anton', sans-serif;
+    background-image: linear-gradient(to right, brown, brown, yellow, white, yellow, brown, brown);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: brown;
+    padding: 9vw 2vw 0vw 2vw;
+    text-align: center;
+    font-size: 8vw;
+}
+
+.jquery-container{
+    width: 100%;
+    height: auto;
+}

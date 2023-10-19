@@ -1,0 +1,104 @@
+﻿@model IEnumerable<AspNetCoreMvc.Models.DiscussionForum>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+@{
+    if (User.Identity.IsAuthenticated)
+    {
+        <p>
+            <a asp-action="Create">Create New</a>
+        </p>
+    }
+}
+@foreach (var item in Model)
+{
+    <h2>@Html.DisplayFor(modelItem => item.TopicTitle)</h2>
+    @*<p>@Html.DisplayFor(modelItem => item.Like)</p>*@
+    <p>@{
+            for (int i = 0; i < item.Like; i++)
+            {
+                <span style="color: #f8bd08; ">&#x2605;</span>
+            }
+            for (int i = 0; i < 5 - item.Like; i++)
+            {
+                <span>&#x2606;</span>
+            }
+        }
+    </p>
+    <p>@Html.DisplayFor(modelItem => item.MessageContent)</p>
+    <p>
+        Posted by <b>@Html.DisplayFor(modelItem => item.UserName)</b> on
+        @Html.DisplayFor(modelItem => item.PostDate)
+    </p>
+    <p>
+        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
+        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Details</a>
+        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+        <a asp-action="IncreaseLike" asp-route-id="@item.Id" class="btn btn-success">Like(+)</a>
+    </p>
+    <hr />
+}
+@*<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PostDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TopicTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MessageContent)
+            </th>
+            <td>
+                @Html.DisplayNameFor(model => model.Like)
+            </td>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PostDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TopicTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MessageContent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Like)
+            </td>
+            <td>
+                @if (User.IsInRole("admin"))
+                {
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-success">Edit</a>
+                }
+                |
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">Details</a> |
+                @if (User.IsInRole("admin"))
+                {
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                }
+                |
+                <a asp-action="IncreaseLike" asp-route-id="@item.Id">Like(+)</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>*@
+
+
+

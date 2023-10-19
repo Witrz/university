@@ -1,0 +1,102 @@
+﻿#jobs-title {
+    font-family: 'Anton', sans-serif;
+    background-image: linear-gradient(to right, brown, brown, yellow, white, yellow, brown, brown);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 9vw 2vw 0vw 2vw;
+    text-align: center;
+    font-size: 8vw;
+}
+
+#jobs-page {
+    width: inherit;
+    margin-bottom: 100px;
+    overflow: hidden;
+}
+
+.jobs-title{
+    height: 100vh;
+}
+
+.title-section {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url(../media/background/bg1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: -1;
+    padding-top: 60px;
+}
+
+.jobs-content {
+    text-align: center;
+    padding-top: 50px;
+    background-color: rgb(10 0 201 / 40%);
+    border: 1px solid yellow;
+}
+
+.jobs-content > h1 {
+    font-weight: 700;
+    font-size: 3.2rem;
+    color: #ffd800;
+    text-shadow: 5px 3px grey;
+}
+
+.jobs-content > p {
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+section > #table {
+    overflow: scroll;
+}
+
+hr {
+    background-color: yellow;
+}
+
+#barchart > img {
+    width:100%;
+}
+
+#piechart > img {
+    width: 100%;
+}
+
+.title-section > p{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 2vw;
+    text-align: center;
+}
+
+table, td, th {
+    border: 1px solid black;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 5px;
+}
+
+th {
+    background-color: navy;
+    color: yellow;
+    text-align: center;
+}
+
+tr {
+    background-color: white;
+    color: navy;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}

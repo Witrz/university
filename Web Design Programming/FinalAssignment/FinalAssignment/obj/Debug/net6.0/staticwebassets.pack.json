@@ -1,0 +1,577 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\FinalAssignment.bundle.scp.css",
+      "PackagePath": "staticwebassets\\FinalAssignment.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\css\\contact.css",
+      "PackagePath": "staticwebassets\\css\\contact.css"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\css\\elastic-grid.min.css",
+      "PackagePath": "staticwebassets\\css\\elastic-grid.min.css"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\css\\genai.css",
+      "PackagePath": "staticwebassets\\css\\genai.css"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\css\\jobs.css",
+      "PackagePath": "staticwebassets\\css\\jobs.css"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\csv\\salaries2023.csv",
+      "PackagePath": "staticwebassets\\csv\\salaries2023.csv"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\images\\amazon_thumbnail.jpg",
+      "PackagePath": "staticwebassets\\images\\amazon_thumbnail.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\images\\bard_thumbnail.jpg",
+      "PackagePath": "staticwebassets\\images\\bard_thumbnail.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\images\\dalle_thumbnail.jpg",
+      "PackagePath": "staticwebassets\\images\\dalle_thumbnail.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\images\\google_thumbnail.jpg",
+      "PackagePath": "staticwebassets\\images\\google_thumbnail.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\images\\ibm_large.jpg",
+      "PackagePath": "staticwebassets\\images\\ibm_large.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\images\\is.jpg",
+      "PackagePath": "staticwebassets\\images\\is.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\images\\is_small.jpg",
+      "PackagePath": "staticwebassets\\images\\is_small.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\images\\jewel.jpg",
+      "PackagePath": "staticwebassets\\images\\jewel.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\images\\jewel_small.jpg",
+      "PackagePath": "staticwebassets\\images\\jewel_small.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\images\\ms_thumbnail.jpg",
+      "PackagePath": "staticwebassets\\images\\ms_thumbnail.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\images\\synthesia_thumbnail.jpg",
+      "PackagePath": "staticwebassets\\images\\synthesia_thumbnail.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\images\\x.jpg",
+      "PackagePath": "staticwebassets\\images\\x.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\js\\classie.js",
+      "PackagePath": "staticwebassets\\js\\classie.js"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\js\\contact.js",
+      "PackagePath": "staticwebassets\\js\\contact.js"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\js\\elastic_grid.min.js",
+      "PackagePath": "staticwebassets\\js\\elastic_grid.min.js"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\js\\genai.js",
+      "PackagePath": "staticwebassets\\js\\genai.js"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\js\\genaisites.js",
+      "PackagePath": "staticwebassets\\js\\genaisites.js"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\js\\home.js",
+      "PackagePath": "staticwebassets\\js\\home.js"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\js\\jobs.js",
+      "PackagePath": "staticwebassets\\js\\jobs.js"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\js\\layout.js",
+      "PackagePath": "staticwebassets\\js\\layout.js"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\js\\modernizr.custom.js",
+      "PackagePath": "staticwebassets\\js\\modernizr.custom.js"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\background\\Blockchain3.jpg",
+      "PackagePath": "staticwebassets\\media\\background\\Blockchain3.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\background\\CloudComputing.jpg",
+      "PackagePath": "staticwebassets\\media\\background\\CloudComputing.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\background\\Robotics2.jpg",
+      "PackagePath": "staticwebassets\\media\\background\\Robotics2.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\background\\bg1.jpg",
+      "PackagePath": "staticwebassets\\media\\background\\bg1.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\background\\bg2.jpg",
+      "PackagePath": "staticwebassets\\media\\background\\bg2.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\background\\bg3.jpg",
+      "PackagePath": "staticwebassets\\media\\background\\bg3.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\background\\bg4.jpg",
+      "PackagePath": "staticwebassets\\media\\background\\bg4.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\background\\bg5.jpg",
+      "PackagePath": "staticwebassets\\media\\background\\bg5.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\background\\bg6.jpg",
+      "PackagePath": "staticwebassets\\media\\background\\bg6.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\background\\bg7.jpg",
+      "PackagePath": "staticwebassets\\media\\background\\bg7.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\genai\\amazon_large.jpg",
+      "PackagePath": "staticwebassets\\media\\genai\\amazon_large.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\genai\\amazon_thumbnail.jpg",
+      "PackagePath": "staticwebassets\\media\\genai\\amazon_thumbnail.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\genai\\bard_large.jpg",
+      "PackagePath": "staticwebassets\\media\\genai\\bard_large.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\genai\\bard_thumbnail.jpg",
+      "PackagePath": "staticwebassets\\media\\genai\\bard_thumbnail.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\genai\\chatgpt_large.jpg",
+      "PackagePath": "staticwebassets\\media\\genai\\chatgpt_large.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\genai\\chatgpt_thumbnail.jpg",
+      "PackagePath": "staticwebassets\\media\\genai\\chatgpt_thumbnail.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\genai\\dalle_large.jpg",
+      "PackagePath": "staticwebassets\\media\\genai\\dalle_large.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\genai\\dalle_thumbnail.jpg",
+      "PackagePath": "staticwebassets\\media\\genai\\dalle_thumbnail.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\genai\\githubcopilot_large.jpg",
+      "PackagePath": "staticwebassets\\media\\genai\\githubcopilot_large.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\genai\\githubcopilot_thumbnail.jpg",
+      "PackagePath": "staticwebassets\\media\\genai\\githubcopilot_thumbnail.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\genai\\google_large.jpg",
+      "PackagePath": "staticwebassets\\media\\genai\\google_large.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\genai\\google_thumbnail.jpg",
+      "PackagePath": "staticwebassets\\media\\genai\\google_thumbnail.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\genai\\ibm_large.jpg",
+      "PackagePath": "staticwebassets\\media\\genai\\ibm_large.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\genai\\ibm_thumbnail.jpg",
+      "PackagePath": "staticwebassets\\media\\genai\\ibm_thumbnail.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\genai\\midjourney_large.jpg",
+      "PackagePath": "staticwebassets\\media\\genai\\midjourney_large.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\genai\\midjourney_thumbnail.jpg",
+      "PackagePath": "staticwebassets\\media\\genai\\midjourney_thumbnail.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\genai\\ms_large.jpg",
+      "PackagePath": "staticwebassets\\media\\genai\\ms_large.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\genai\\ms_thumbnail.jpg",
+      "PackagePath": "staticwebassets\\media\\genai\\ms_thumbnail.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\genai\\synthesia_large.jpg",
+      "PackagePath": "staticwebassets\\media\\genai\\synthesia_large.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\genai\\synthesia_thumbnail.jpg",
+      "PackagePath": "staticwebassets\\media\\genai\\synthesia_thumbnail.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\genai\\x.jpg",
+      "PackagePath": "staticwebassets\\media\\genai\\x.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\genaisites\\amazon_thumbnail.jpg",
+      "PackagePath": "staticwebassets\\media\\genaisites\\amazon_thumbnail.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\genaisites\\bard.jpg",
+      "PackagePath": "staticwebassets\\media\\genaisites\\bard.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\genaisites\\bard_thumbnail.jpg",
+      "PackagePath": "staticwebassets\\media\\genaisites\\bard_thumbnail.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\genaisites\\chatgpt.jpg",
+      "PackagePath": "staticwebassets\\media\\genaisites\\chatgpt.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\genaisites\\chatgpt_thumbnail.jpg",
+      "PackagePath": "staticwebassets\\media\\genaisites\\chatgpt_thumbnail.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\genaisites\\dalle.jpg",
+      "PackagePath": "staticwebassets\\media\\genaisites\\dalle.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\genaisites\\dalle_thumbnail.jpg",
+      "PackagePath": "staticwebassets\\media\\genaisites\\dalle_thumbnail.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\genaisites\\githubcopilot_thumbnail.jpg",
+      "PackagePath": "staticwebassets\\media\\genaisites\\githubcopilot_thumbnail.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\genaisites\\google.jpg",
+      "PackagePath": "staticwebassets\\media\\genaisites\\google.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\genaisites\\google_thumbnail.jpg",
+      "PackagePath": "staticwebassets\\media\\genaisites\\google_thumbnail.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\genaisites\\ibm_thumbnail.jpg",
+      "PackagePath": "staticwebassets\\media\\genaisites\\ibm_thumbnail.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\genaisites\\iot.jpg",
+      "PackagePath": "staticwebassets\\media\\genaisites\\iot.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\genaisites\\job.jpg",
+      "PackagePath": "staticwebassets\\media\\genaisites\\job.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\genaisites\\microsoft.jpg",
+      "PackagePath": "staticwebassets\\media\\genaisites\\microsoft.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\genaisites\\midjourney.jpg",
+      "PackagePath": "staticwebassets\\media\\genaisites\\midjourney.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\genaisites\\midjourney_thumbnail.jpg",
+      "PackagePath": "staticwebassets\\media\\genaisites\\midjourney_thumbnail.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\genaisites\\ms_thumbnail.jpg",
+      "PackagePath": "staticwebassets\\media\\genaisites\\ms_thumbnail.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\genaisites\\pie.jpg",
+      "PackagePath": "staticwebassets\\media\\genaisites\\pie.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\genaisites\\synthesia_thumbnail.jpg",
+      "PackagePath": "staticwebassets\\media\\genaisites\\synthesia_thumbnail.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\genaisites\\x.jpg",
+      "PackagePath": "staticwebassets\\media\\genaisites\\x.jpg"
+    },
+    {
+      "Id": "C:\\2. University of Canberra\\9. Semester 2, 2023\\Web Design Programming\\FinalAssignment\\FinalAssignment\\wwwroot\\media\\video.mp4",
+      "PackagePath": "staticwebassets\\media\\video.mp4"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.FinalAssignment.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.FinalAssignment.props",
+      "PackagePath": "build\\FinalAssignment.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.FinalAssignment.props",
+      "PackagePath": "buildMultiTargeting\\FinalAssignment.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.FinalAssignment.props",
+      "PackagePath": "buildTransitive\\FinalAssignment.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
